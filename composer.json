@@ -1,0 +1,25 @@
+{
+    "name": "efremovp/simple-telegram-send",
+    "description": "Отправка сообщений в Telegram.",
+    "type": "library",
+    "keywords": ["telegram","send text","simple","library"],
+    "license": "MIT",
+    "homepage": "https://github.com/efremovP/simple-telegram-send",
+    "authors": [
+        {
+            "name": "Peter Efremov",
+            "email": "peter.efremov@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "efremovP\\telegram\\": "src"
+        }
+    }
+}
