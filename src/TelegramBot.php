@@ -30,7 +30,7 @@ class TelegramBot
      */
     public function send($text = '', $chat_id = '')
     {
-        $command = 'https://api.telegram.org/bot'. $this->token_bot .'/sendMessage?disable_web_page_preview=true&chat_id='. $chat_id .'&text='. urlencode($text) . '&parse_mode=HTML';
+        $command = 'https://api.telegram.org/bot'. $this->token_bot .'/sendMessage?disable_web_page_preview=true&chat_id='. $chat_id .'&text='. urlencode($text) . $this->parse_mode;
 
         $ch = curl_init();
 
