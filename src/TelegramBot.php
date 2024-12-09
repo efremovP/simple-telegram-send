@@ -12,10 +12,15 @@ namespace efremovP\telegram;
 class TelegramBot
 {
     private $token_bot;
+    private $parse_mode = '';
 
-    public function __construct($token_bot = '')
+    public function __construct($token_bot = '', $is_html = false)
     {
         $this->token_bot = $token_bot;
+
+        if ($is_html) {
+            $this->parse_mode = '&parse_mode="HTML"';
+        }
     }
 
     /**
@@ -25,7 +30,7 @@ class TelegramBot
      */
     public function send($text = '', $chat_id = '')
     {
-        $command = 'https://api.telegram.org/bot'. $this->token_bot .'/sendMessage?disable_web_page_preview=true&chat_id='. $chat_id .'&text='. urlencode($text);
+        $command = 'https://api.telegram.org/bot'. $this->token_bot .'/sendMessage?disable_web_page_preview=true&chat_id='. $chat_id .'&text='. urlencode($text) . '&parse_mode=HTML';
 
         $ch = curl_init();
 
