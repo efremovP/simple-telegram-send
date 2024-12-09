@@ -19,7 +19,7 @@ class TelegramBot
         $this->token_bot = $token_bot;
 
         if ($is_html) {
-            $this->parse_mode = '&parse_mode="HTML"';
+            $this->parse_mode = '&parse_mode=HTML';
         }
     }
 
